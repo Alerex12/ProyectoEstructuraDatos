@@ -4,9 +4,9 @@ public class Nodo {
     private Nodo siguiente;
     private Usuario usuario;
 
-    public Nodo(Usuario usuario) {
+    public Nodo() {
         this.siguiente = null;
-        this.usuario = usuario;
+        
     }
 
     public Nodo getSiguiente() {
