@@ -7,12 +7,12 @@ public class Usuario {
     private String clave;
     Estado estado;
 
-    public Usuario(String nombre, String apellidos, String nombreUsuario, String clave, Estado estado) {
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.nombreUsuario = nombreUsuario;
-        this.clave = clave;
-        this.estado = estado;
+    public Usuario() {
+        this.nombre = " ";
+        this.apellidos = " ";
+        this.nombreUsuario =" ";
+        this.clave = " ";
+        this.estado = Estado.ACTIVO;
     }
 
     public String getNombre() {
