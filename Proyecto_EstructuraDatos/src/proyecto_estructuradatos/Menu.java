@@ -26,7 +26,7 @@ public class Menu {
                 mostrarMenu();
                 break;
             case 3:
-                JOptionPane.showMessageDialog(null, "Inactivar usuario...");
+                usuario.Inactivar();
                mostrarMenu();
                 break;
             case 4:

@@ -71,6 +71,31 @@ public class ColaUsuarios {
         }
     
     }
-    
-}
+        public void Inactivar() {
+            
+                    if(!esVacia()){
+                       String usuarioBuscar= JOptionPane.showInputDialog(null, "digite el usuario a buscar");
+            String s="";
+            Nodo aux=inicio;
+            int cont=1;
+            while(aux!=null){
+                if (usuarioBuscar.equals(aux.getUsuario().getNombreUsuario()) ) {
+                    aux.getUsuario().setEstado(Estado.INACTIVO);  
+                    s="Nombre: "+aux.getUsuario().getNombre()
+                        +", Apellidos: "+aux.getUsuario().getApellidos()
+                        +", Nombre de usuario: "+aux.getUsuario().getNombreUsuario()
+                        +", Clave: "+aux.getUsuario().getClave()
+                        +", Estado: "+aux.getUsuario().getEstado()+"\n";
+                }
+                aux=aux.getSiguiente();
+            
+            }
+            
+            JOptionPane.showMessageDialog(null, "Los usuarios registrados son los siguientes: \n" + s);
+        } else {
+            JOptionPane.showMessageDialog(null, "No hay usuario registrados");
 
+        }
+
+    }
+}
