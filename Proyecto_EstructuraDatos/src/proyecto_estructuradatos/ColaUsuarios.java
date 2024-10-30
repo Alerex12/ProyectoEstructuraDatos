@@ -1,19 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package proyecto_estructuradatos;
 
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Gabo
- */
 public class ColaUsuarios {
     private Nodo inicio; 
     private Nodo fin;    
-    // Constructor
+
     public ColaUsuarios() {
         this.inicio = null;
         this.fin = null;
@@ -23,13 +15,11 @@ public class ColaUsuarios {
         if(inicio==null){
             return true;
         
-        }else{
+        } else{
             return false;
         }
-    
     }
 
-    
     public void encolarUsuario() {
         Usuario nuevo = new Usuario();
         nuevo.setNombre(JOptionPane.showInputDialog("Ingrese el nombre del usuario: "));
@@ -49,7 +39,7 @@ public class ColaUsuarios {
         System.out.println("Usuario encolado: " + nuevo.getNombre() + " " + nuevo.getApellidos());
     }
     
-        public void mostrarUsuarios(){
+    public void mostrarUsuarios(){
         if(!esVacia()){
             String s="";
             Nodo aux=inicio;
@@ -65,12 +55,12 @@ public class ColaUsuarios {
             
             }
             JOptionPane.showMessageDialog(null, "Los usuarios registrados son los siguientes: \n"+s);
-        }else{
+        } else{
             JOptionPane.showMessageDialog(null,"No hay usuario registrados");
         
         }
-    
     }
+
         public void Inactivar() {
             
                     if(!esVacia()){
@@ -98,4 +88,6 @@ public class ColaUsuarios {
         }
 
     }
+
 }
+
