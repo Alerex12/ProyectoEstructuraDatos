@@ -5,7 +5,7 @@ public class Usuario {
     private String apellidos;
     private String nombreUsuario;
     private String clave;
-    Estado estado;
+    private Estado estado;
 
     public Usuario() {
         this.nombre = " ";

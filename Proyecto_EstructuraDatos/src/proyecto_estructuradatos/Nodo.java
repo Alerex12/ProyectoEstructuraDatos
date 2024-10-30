@@ -6,7 +6,6 @@ public class Nodo {
 
     public Nodo() {
         this.siguiente = null;
-        
     }
 
     public Nodo getSiguiente() {

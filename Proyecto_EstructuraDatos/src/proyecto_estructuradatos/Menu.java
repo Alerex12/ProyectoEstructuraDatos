@@ -1,14 +1,12 @@
-
 package proyecto_estructuradatos;
 
 import javax.swing.JOptionPane;
 
 public class Menu {
     
-        private byte opt;
+    private byte opt;
     private ColaUsuarios usuario =new ColaUsuarios();
 
-    
     public void mostrarMenu(){
         opt=Byte.parseByte(JOptionPane.showInputDialog("--------BIENVENIDO AL MENU DEL GIMNASIO INFANTIL ESTRELLITAS--------\n"+
                 "Que accion desea realizar?\n"
@@ -36,9 +34,6 @@ public class Menu {
             default:
                 JOptionPane.showMessageDialog(null, "Opcion ingresada invalida");
                 mostrarMenu();
-  
         }
-
     }
-    
 }
