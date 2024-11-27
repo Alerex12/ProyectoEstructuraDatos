@@ -210,7 +210,7 @@ public class Funcion_Subcatalogos {
     
     public void editarPadres(){
         
-         if (!esVaciaDepor()) {
+         if (!esVaciaPadres()) {
             String eleccion = JOptionPane.showInputDialog("Ingrese el nombre del padre que quiere editar: ");
             NodoPadresDeFamilia aux = inicioPadres;
             NodoDeportista aux2= inicioDeportista;
@@ -286,7 +286,7 @@ public class Funcion_Subcatalogos {
     }
     
     public void inactivarPadres(){
-        if (!esVaciaDepor()) {
+        if (!esVaciaPadres()) {
             String eleccion = JOptionPane.showInputDialog("Ingrese el del padre que quiere inactivar: ");
             NodoPadresDeFamilia aux = inicioPadres;
 
@@ -330,9 +330,104 @@ public class Funcion_Subcatalogos {
 
     }
     
+    public void encolarDeporte() {
+        Deportes nuevo = new Deportes();
+        nuevo.setNombre(JOptionPane.showInputDialog("Ingrese el deporte del niño: "));
+        nuevo.setCaracterísticas(JOptionPane.showInputDialog("Ingrese las caracteristicas que tiene el deporte: "));
+        NodoDeportes nuevoNodo = new NodoDeportes();
+        nuevoNodo.setElemento(nuevo);
+
+        if (inicioDeportes == null) {
+            inicioDeportes = nuevoNodo;
+            finDeportes = nuevoNodo;
+        } else {
+            finDeportes.setSiguiente(nuevoNodo);
+            finDeportes = nuevoNodo;
+        }
+        JOptionPane.showMessageDialog(null, "Deporte registrado correctamente!!1");
+    }
     
+    public void editarDeporte(){
+        if (!esVaciaDeportes()) {
+            String eleccion = JOptionPane.showInputDialog("Ingrese el nombre del deporte que quiere editar: ");
+            NodoDeportes aux = inicioDeportes;
+            while (aux != null) {
+                if (aux.getElemento().getNombre().equals(eleccion)) {
+                    int opt;
+
+                    do {
+                        opt = Integer.parseInt(JOptionPane.showInputDialog("¿Que informacion desea editar del deporte?\n"
+                                + "1-Editar nombre del deporte\n"
+                                + "2-Editar caracteristicas del deporte\n"
+                                + "3-Salir\n"));
+
+                        switch (opt) {
+                            case 1:
+                                aux.getElemento().setNombre(JOptionPane.showInputDialog("Ingrese el nuevo nombre del deporte: "));
+                                JOptionPane.showMessageDialog(null, "Nombre editado correctamente!!");
+                                break;
+                            case 2:
+                                aux.getElemento().setCaracterísticas(JOptionPane.showInputDialog("Ingrese las nuevas caracteristicas del deporte: "));
+                                JOptionPane.showMessageDialog(null, "Caracteristicas editas correctamente!!");
+                                break;
+                            case 3:
+                                JOptionPane.showMessageDialog(null, "Saliendo de edicion de deportes...");
+                                break;
+                            default:
+                                JOptionPane.showMessageDialog(null, "Opcion");
+                                break;
+                        }
+                    } while (opt != 3);
+
+                    return;
+                }
+                aux = aux.getSiguiente();
+            }
+            JOptionPane.showMessageDialog(null, "Deporte no encontrado");
+        }else{JOptionPane.showMessageDialog(null, "Ningun deporte registrado nada que editar");}
+    
+    }
+    
+    public void inactivarDeporte(){
+        if (!esVaciaDeportes()) {
+            String eleccion = JOptionPane.showInputDialog("Ingrese el nombre del deporte que quiere inactivar: ");
+            NodoDeportes aux = inicioDeportes;
+
+            while (aux != null) {
+                if (aux.getElemento().getNombre().equals(eleccion)) {
+                    aux.getElemento().setEstado(Estado.INACTIVO);
+                    JOptionPane.showMessageDialog(null, "Deporte inactivado");
+                    return;
+                }
+                aux= aux.getSiguiente();
+            }
+            JOptionPane.showMessageDialog(null, "No se encontro el deporte...");
+        }else{JOptionPane.showMessageDialog(null, "Ningun deporte registrado nada que inactivar");}
+    }
+    
+     public void mostrarDeportes(){
+        if (!esVaciaDeportes()) {
+            String s = "";
+            int cont=1;
+            NodoDeportes aux = inicioDeportes;
+            while (aux != null) {
+                s = s +"["+cont+"]"+"Nombre: "+ aux.getElemento().getNombre()+"---"+
+                        "Caracteristicas: "+aux.getElemento().getCaracterísticas()+"---"+
+                        "Estado: "+aux.getElemento().getEstado()+"\n";
+                aux= aux.getSiguiente();
+                cont+=1;
+            }
+            JOptionPane.showMessageDialog(null, "Los deportes registrados son:\n" + s);
+        } else {
+            JOptionPane.showMessageDialog(null,
+                    "No hay deportes registrados, nada que mostrar");
+        }
+    }
+
+}
+
     
     
     
 
-}
+
