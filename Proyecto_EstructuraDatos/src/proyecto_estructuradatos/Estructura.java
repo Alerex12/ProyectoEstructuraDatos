@@ -29,7 +29,7 @@ public class Estructura {
 
     public void encolarDeportes() {
         Deportes nuevo = new Deportes();
-        nuevo.setDeporte(JOptionPane.showInputDialog("Ingrese el deporte del niño: "));
+        nuevo.setNombre(JOptionPane.showInputDialog("Ingrese el deporte del niño: "));
         nuevo.setCaracterísticas(JOptionPane.showInputDialog("Ingrese las caracteristicas que tiene el deporte: "));
         NodoDeportes nuevoNodo = new NodoDeportes();
         nuevoNodo.setElemento(nuevo);
@@ -42,7 +42,7 @@ public class Estructura {
             finDeportes = nuevoNodo;
         }
         System.out.println(
-                "estado actual: " + nuevo.getDeporte() + " " + nuevo.getCaracterísticas() + " " + nuevo.getEstado());
+                "estado actual: " + nuevo.getNombre() + " " + nuevo.getCaracterísticas() + " " + nuevo.getEstado());
     }
 
 }

@@ -13,7 +13,7 @@ public class PadresDeFamilia {
     public PadresDeFamilia() {
         this.nombrePadre = "";
         this.apellidosPadre = "";
-        this.nombreHijo = "";
+        this.nombreHijo ="";
         this.ciudad = "";
         this.direccion = "";
         this.telefono = "";

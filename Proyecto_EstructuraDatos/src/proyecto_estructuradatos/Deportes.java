@@ -6,12 +6,12 @@ public class Deportes {
      * de Deportes (nombre del deporte,
      * características y estado),
      */
-    private String deporte;
+    private String nombre;
     private String características;
     private Estado estado;
 
     public Deportes() {
-        this.deporte = "";
+        this.nombre = "";
         this.características = "";
         this.estado = Estado.ACTIVO;
     }
@@ -24,12 +24,12 @@ public class Deportes {
         return estado;
     }
 
-    public String getDeporte() {
-        return deporte;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setDeporte(String deporte) {
-        this.deporte = deporte;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public void setCaracterísticas(String características) {

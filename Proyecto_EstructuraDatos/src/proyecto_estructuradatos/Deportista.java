@@ -2,8 +2,6 @@
 package proyecto_estructuradatos;
 
 public class Deportista {
-
-    private String nombreUsuario;
     private String identificacion;
     private String nombre;
     private String apellido;
@@ -14,7 +12,7 @@ public class Deportista {
     private Estado estado;
 
     public Deportista() {
-        this.nombreUsuario = " ";
+       
         this.identificacion = " ";
         this.nombre = "";
         this.apellido = " ";
@@ -25,13 +23,7 @@ public class Deportista {
         this.estado = Estado.ACTIVO;
     }
 
-    public String getNombreUsuario() {
-        return nombreUsuario;
-    }
-
-    public void setNombreUsuario(String nombreUsuario) {
-        this.nombreUsuario = nombreUsuario;
-    }
+  
 
     public String getIdentificacion() {
         return identificacion;
