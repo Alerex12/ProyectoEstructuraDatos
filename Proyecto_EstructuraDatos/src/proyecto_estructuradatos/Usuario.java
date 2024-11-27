@@ -10,7 +10,7 @@ public class Usuario {
     public Usuario() {
         this.nombre = " ";
         this.apellidos = " ";
-        this.nombreUsuario =" ";
+        this.nombreUsuario = " ";
         this.clave = " ";
         this.estado = Estado.ACTIVO;
     }

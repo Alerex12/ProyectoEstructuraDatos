@@ -34,10 +34,5 @@ public class NodoDeportista {
     public void setAnterior(NodoDeportista anterior) {
         this.anterior = anterior;
     }
-    
-    
-    
-            
-    
-    
+
 }

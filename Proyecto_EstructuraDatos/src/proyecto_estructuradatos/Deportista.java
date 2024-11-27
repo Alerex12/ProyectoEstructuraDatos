@@ -2,7 +2,7 @@
 package proyecto_estructuradatos;
 
 public class Deportista {
-    
+
     private String nombreUsuario;
     private String identificacion;
     private String nombre;
@@ -16,16 +16,14 @@ public class Deportista {
     public Deportista() {
         this.nombreUsuario = " ";
         this.identificacion = " ";
-        this.nombre = nombre;
+        this.nombre = "";
         this.apellido = " ";
         this.ciudad = " ";
         this.direccion = " ";
-        this.telefono =" ";
+        this.telefono = " ";
         this.correo = " ";
         this.estado = Estado.ACTIVO;
     }
-    
-    
 
     public String getNombreUsuario() {
         return nombreUsuario;
@@ -98,9 +96,5 @@ public class Deportista {
     public void setEstado(Estado estado) {
         this.estado = estado;
     }
-    
-    
-    
-    
-    
+
 }
