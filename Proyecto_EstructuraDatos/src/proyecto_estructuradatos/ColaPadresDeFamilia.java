@@ -33,10 +33,10 @@ public class ColaPadresDeFamilia {
                 JOptionPane.QUESTION_MESSAGE,
                 null,
                 opciones,
-                opciones[0] // Opción predeterminada
+                opciones[0] // Opción predeterminada, en este caso ACTIVO
         );
         if (seleccion != null) {
-            d.setEstado(seleccion); // Asegúrate de que el método setEstado acepte el tipo Estado
+            d.setEstado(seleccion); // Asegúrate de que el método setEstado acepte el tipo Estado dependiendo de su seleccion.
         } else {
             JOptionPane.showMessageDialog(null, "Debe seleccionar un estado.");
             return; // Salir del método si no se selecciona un estado
