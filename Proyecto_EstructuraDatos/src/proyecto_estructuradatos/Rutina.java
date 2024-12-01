@@ -9,10 +9,10 @@ package proyectoestructura;
  * @author Gabo
  */
 public class Rutina {
-    private String idRutina;  // Identificador único para la rutina
+    private String idRutina; 
     private String nombre;
     private String descripcion;
-    private String nivel; // Básico, Intermedio, Avanzado
+    private String nivel; 
     private int duracion; // En minutos
     private String identificacionDeportista;  // Identificación del deportista al que pertenece la rutina
 
