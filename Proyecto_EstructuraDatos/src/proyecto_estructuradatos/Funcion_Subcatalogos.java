@@ -13,6 +13,8 @@ public class Funcion_Subcatalogos {
     private NodoDeportes finDeportes;
     private NodoPadresDeFamilia inicioPadres;
     private NodoPadresDeFamilia finPadres;
+    private NodoRutina inicioRutinas;
+    private NodoRutina finRutinas;
 
     public Funcion_Subcatalogos() {
         this.inicioDeportista = null;
@@ -21,6 +23,8 @@ public class Funcion_Subcatalogos {
         this.finDeportes = null;
         this.inicioPadres = null;
         this.finPadres = null;
+        this.inicioRutinas = null;
+        this.finRutinas = null;
     }
    
     public boolean esVaciaDepor(){
@@ -423,7 +427,127 @@ public class Funcion_Subcatalogos {
                     "No hay deportes registrados, nada que mostrar");
         }
     }
+    
+    public boolean esVaciaRutinas() {
+    return inicioRutinas == null;
+}
 
+    public void agregarRutina() {
+    Rutina nuevaRutina = new Rutina();
+    nuevaRutina.setId(JOptionPane.showInputDialog("Ingrese el ID de la rutina: "));
+    nuevaRutina.setNombre(JOptionPane.showInputDialog("Ingrese el nombre de la rutina: "));
+    nuevaRutina.setDescripcion(JOptionPane.showInputDialog("Ingrese la descripción de la rutina: "));
+    nuevaRutina.setDuracion(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la duración (en minutos): ")));
+    
+    NodoRutina nuevoNodo = new NodoRutina();
+    nuevoNodo.setElemento(nuevaRutina);
+    
+    if (esVaciaRutinas()) {
+        inicioRutinas = nuevoNodo;
+        finRutinas = nuevoNodo;
+    } else {
+        finRutinas.setSiguiente(nuevoNodo);
+        finRutinas = nuevoNodo;
+    }
+    JOptionPane.showMessageDialog(null, "Rutina agregada exitosamente.");
+}
+
+    public void mostrarRutinas() {
+    if (!esVaciaRutinas()) {
+        String s = "";
+        NodoRutina aux = inicioRutinas;
+        while (aux != null) {
+            Rutina r = aux.getElemento();
+            s = s
+                + "Identificación del Deportista: " + r.getIdentificacionDeportista() + "\n"
+                + "Descripción de la Rutina: " + r.getDescripcion() + "\n"
+                + "Duración de la Rutina: " + r.getDuracion() + "\n"
+                + "----------------------------------\n";
+            aux = aux.getSiguiente();
+        }
+        JOptionPane.showMessageDialog(null, "Las rutinas registradas son:\n" + s);
+    } else {
+        JOptionPane.showMessageDialog(null, "No hay rutinas registradas, nada que mostrar");
+    }
+}
+
+    public void editarRutina() {
+    if (!esVaciaRutinas()) {
+        String id = JOptionPane.showInputDialog("Ingrese el ID de la rutina a editar:");
+        NodoRutina aux = inicioRutinas;
+        
+        while (aux != null) {
+            if (aux.getElemento().getId().equals(id)) {
+                int opcion;
+                
+                do {
+                    opcion = Integer.parseInt(JOptionPane.showInputDialog(
+                        "¿Qué desea editar?\n" +
+                        "1. Nombre\n" +
+                        "2. Descripción\n" +
+                        "3. Duración\n" +
+                        "4. Salir"
+                    ));
+                    
+                    switch (opcion) {
+                        case 1:
+                            aux.getElemento().setNombre(JOptionPane.showInputDialog("Ingrese el nuevo nombre: "));
+                            JOptionPane.showMessageDialog(null, "Nombre actualizado.");
+                            break;
+                        case 2:
+                            aux.getElemento().setDescripcion(JOptionPane.showInputDialog("Ingrese la nueva descripción: "));
+                            JOptionPane.showMessageDialog(null, "Descripción actualizada.");
+                            break;
+                        case 3:
+                            aux.getElemento().setDuracion(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la nueva duración (en minutos): ")));
+                            JOptionPane.showMessageDialog(null, "Duración actualizada.");
+                            break;
+                        case 4:
+                            JOptionPane.showMessageDialog(null, "Saliendo de la edición.");
+                            break;
+                        default:
+                            JOptionPane.showMessageDialog(null, "Opción no válida.");
+                    }
+                } while (opcion != 4);
+                return;
+            }
+            aux = aux.getSiguiente();
+        }
+        JOptionPane.showMessageDialog(null, "Rutina no encontrada.");
+    } else {
+        JOptionPane.showMessageDialog(null, "No hay rutinas registradas.");
+    }
+}
+
+    public void eliminarRutina() {
+    if (!esVaciaRutinas()) {
+        String id = JOptionPane.showInputDialog("Ingrese el ID de la rutina a eliminar:");
+        NodoRutina aux = inicioRutinas;
+        NodoRutina anterior = null;
+        
+        while (aux != null) {
+            if (aux.getElemento().getId().equals(id)) {
+                if (aux == inicioRutinas) {
+                    inicioRutinas = aux.getSiguiente();
+                } else {
+                    anterior.setSiguiente(aux.getSiguiente());
+                }
+                
+                if (aux == finRutinas) {
+                    finRutinas = anterior;
+                }
+                
+                JOptionPane.showMessageDialog(null, "Rutina eliminada exitosamente.");
+                return;
+            }
+            anterior = aux;
+            aux = aux.getSiguiente();
+        }
+        JOptionPane.showMessageDialog(null, "Rutina no encontrada.");
+    } else {
+        JOptionPane.showMessageDialog(null, "No hay rutinas registradas.");
+    }
+}
 }
 
     
