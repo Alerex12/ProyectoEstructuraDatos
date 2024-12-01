@@ -436,7 +436,8 @@ public class Funcion_Subcatalogos {
         Rutina rutina = new Rutina();
         rutina.setIdentificacionDeportista(JOptionPane.showInputDialog("Ingrese la identificación del deportista para la rutina: "));
         rutina.setDescripcion(JOptionPane.showInputDialog("Ingrese la descripción de la rutina: "));
-        rutina.setDuracion(JOptionPane.showInputDialog("Ingrese la duración de la rutina: "));
+        int duracion = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la duración de la rutina: "));
+        rutina.setDuracion(duracion);
 
         NodoRutina nuevo = new NodoRutina();
         nuevo.setElemento(rutina);
