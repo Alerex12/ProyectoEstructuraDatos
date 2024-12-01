@@ -9,18 +9,19 @@ package proyectoestructura;
  * @author Gabo
  */
 public class Rutina {
-    private String id;
+    private String idRutina;  // Identificador único para la rutina
     private String nombre;
     private String descripcion;
     private String nivel; // Básico, Intermedio, Avanzado
     private int duracion; // En minutos
+    private String identificacionDeportista;  // Identificación del deportista al que pertenece la rutina
 
-    public String getId() {
-        return id;
+    public String getIdRutina() {
+        return idRutina;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setIdRutina(String idRutina) {
+        this.idRutina = idRutina;
     }
 
     public String getNombre() {
@@ -53,6 +54,14 @@ public class Rutina {
 
     public void setDuracion(int duracion) {
         this.duracion = duracion;
+    }
+
+    public String getIdentificacionDeportista() {
+        return identificacionDeportista;
+    }
+
+    public void setIdentificacionDeportista(String identificacionDeportista) {
+        this.identificacionDeportista = identificacionDeportista;
     }
 }
 
