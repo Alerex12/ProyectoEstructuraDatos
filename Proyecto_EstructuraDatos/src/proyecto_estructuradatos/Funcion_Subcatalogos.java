@@ -432,25 +432,23 @@ public class Funcion_Subcatalogos {
     return inicioRutinas == null;
 }
 
-    public void agregarRutina() {
-    Rutina nuevaRutina = new Rutina();
-    nuevaRutina.setId(JOptionPane.showInputDialog("Ingrese el ID de la rutina: "));
-    nuevaRutina.setNombre(JOptionPane.showInputDialog("Ingrese el nombre de la rutina: "));
-    nuevaRutina.setDescripcion(JOptionPane.showInputDialog("Ingrese la descripción de la rutina: "));
-    nuevaRutina.setDuracion(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la duración (en minutos): ")));
-    
-    NodoRutina nuevoNodo = new NodoRutina();
-    nuevoNodo.setElemento(nuevaRutina);
-    
-    if (esVaciaRutinas()) {
-        inicioRutinas = nuevoNodo;
-        finRutinas = nuevoNodo;
-    } else {
-        finRutinas.setSiguiente(nuevoNodo);
-        finRutinas = nuevoNodo;
+    public void encolarRutina() {
+        Rutina rutina = new Rutina();
+        rutina.setIdentificacionDeportista(JOptionPane.showInputDialog("Ingrese la identificación del deportista para la rutina: "));
+        rutina.setDescripcion(JOptionPane.showInputDialog("Ingrese la descripción de la rutina: "));
+        rutina.setDuracion(JOptionPane.showInputDialog("Ingrese la duración de la rutina: "));
+
+        NodoRutina nuevo = new NodoRutina();
+        nuevo.setElemento(rutina);
+
+        if (esVaciaRutinas()) {
+            inicioRutinas = nuevo;
+            finRutinas = nuevo;
+        } else {
+            finRutinas.setSiguiente(nuevo);
+            finRutinas = nuevo;
+        }
     }
-    JOptionPane.showMessageDialog(null, "Rutina agregada exitosamente.");
-}
 
     public void mostrarRutinas() {
     if (!esVaciaRutinas()) {
