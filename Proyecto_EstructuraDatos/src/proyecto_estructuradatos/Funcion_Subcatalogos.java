@@ -476,7 +476,7 @@ public class Funcion_Subcatalogos {
         NodoRutina aux = inicioRutinas;
         
         while (aux != null) {
-            if (aux.getElemento().getId().equals(id)) {
+            if (aux.getElemento().getIdRutina().equals(id)) {
                 int opcion;
                 
                 do {
