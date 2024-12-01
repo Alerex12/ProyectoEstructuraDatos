@@ -525,7 +525,7 @@ public class Funcion_Subcatalogos {
         NodoRutina anterior = null;
         
         while (aux != null) {
-            if (aux.getElemento().getId().equals(id)) {
+            if (aux.getElemento().getIdRutina().equals(id)) {
                 if (aux == inicioRutinas) {
                     inicioRutinas = aux.getSiguiente();
                 } else {
