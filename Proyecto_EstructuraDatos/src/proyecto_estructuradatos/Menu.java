@@ -149,7 +149,34 @@ public class Menu {
                 mostrarMenu();
                 break;
             case 5:
-                JOptionPane.showMessageDialog(null, "Opciones rutinas...");
+                do {
+                    opt2 = Integer.parseInt(JOptionPane.showInputDialog("¿Que accion desea realizar con las rutinas?\n"
+                            + "1-Agregar un rutina\n"
+                            + "2-Editar una rutina\n"
+                            + "3-Inactivar una rutina\n"
+                            + "4-Mostrar rutinas\n"
+                            + "5-Salir del catalogo rutinas"));
+                    switch (opt2) {
+                        case 1:
+                            f.encolarRutina();
+                            break;
+                        case 2:
+                            f.editarRutina();
+                            break;
+                        case 3:
+                            f.inactivarRutina();
+                            break;
+                        case 4:
+                            f.mostrarRutinas();
+                            break;
+                        case 5:
+                            JOptionPane.showMessageDialog(null, "Saliendo del catalogo rutinas");
+                            break;
+                        default:
+                            JOptionPane.showMessageDialog(null, "Opcion invalida");
+                            break;
+                    }
+                } while (opt2 != 5);
                 
                 mostrarMenu();
                 break;

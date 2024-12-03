@@ -1,17 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package proyectoestructura;
 
-/**
- *
- * @author Gabo
- */
+package proyecto_estructuradatos;
+
+
 public class NodoRutina {
     private Rutina elemento;  // La clase Rutina que contendrá los datos.
     private NodoRutina siguiente;
 
+    public NodoRutina() {
+        this.siguiente = null;
+    }
+    
+    
     public Rutina getElemento() {
         return elemento;
     }

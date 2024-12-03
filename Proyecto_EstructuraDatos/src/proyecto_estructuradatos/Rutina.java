@@ -1,35 +1,37 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package proyectoestructura;
 
-/**
- *
- * @author Gabo
- */
+package proyecto_estructuradatos;
+
+
 public class Rutina {
-    private String idRutina; 
-    private String nombre;
+    private int idRutina;
+    private Deportes deportePerteneciente; 
     private String descripcion;
-    private String nivel; 
     private int duracion; // En minutos
-    private String identificacionDeportista;  // Identificación del deportista al que pertenece la rutina
+    private Estado estado;
 
-    public String getIdRutina() {
+    public Rutina() {
+        this.idRutina = 0;
+        this.deportePerteneciente = null;
+        this.descripcion = "";
+        this.duracion = 0;
+        this.estado = Estado.ACTIVO;
+    }
+
+    public Deportes getDeportePerteneciente() {
+        return deportePerteneciente;
+    }
+
+    public void setDeportePerteneciente(Deportes deportePerteneciente) {
+        this.deportePerteneciente = deportePerteneciente;
+    }
+    
+
+    public int getIdRutina() {
         return idRutina;
     }
 
-    public void setIdRutina(String idRutina) {
+    public void setIdRutina(int idRutina) {
         this.idRutina = idRutina;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
     }
 
     public String getDescripcion() {
@@ -40,14 +42,6 @@ public class Rutina {
         this.descripcion = descripcion;
     }
 
-    public String getNivel() {
-        return nivel;
-    }
-
-    public void setNivel(String nivel) {
-        this.nivel = nivel;
-    }
-
     public int getDuracion() {
         return duracion;
     }
@@ -56,12 +50,12 @@ public class Rutina {
         this.duracion = duracion;
     }
 
-    public String getIdentificacionDeportista() {
-        return identificacionDeportista;
+    public Estado getEstado() {
+        return estado;
     }
 
-    public void setIdentificacionDeportista(String identificacionDeportista) {
-        this.identificacionDeportista = identificacionDeportista;
-    }
+    public void setEstado(Estado estado) {
+        this.estado = estado;
+    } 
 }
 
