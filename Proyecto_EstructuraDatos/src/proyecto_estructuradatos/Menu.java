@@ -8,6 +8,7 @@ public class Menu {
     private int opt2;
     private ColaUsuarios usuario = new ColaUsuarios();
     private Funcion_Subcatalogos f= new Funcion_Subcatalogos();
+    private Funcion_Facturacion a= new Funcion_Facturacion();
 
     public void mostrarMenu() {
         opt = Byte.parseByte(

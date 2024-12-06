@@ -57,5 +57,12 @@ public class Rutina {
     public void setEstado(Estado estado) {
         this.estado = estado;
     } 
+    
+    @Override
+    public String toString(){
+        return this.idRutina+" "+this.descripcion+" "+
+               this.deportePerteneciente+" "+this.duracion+" "+this.estado;
+    
+    }
 }
 

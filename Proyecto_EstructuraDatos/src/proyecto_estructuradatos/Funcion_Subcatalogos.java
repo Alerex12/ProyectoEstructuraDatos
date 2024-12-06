@@ -4,7 +4,7 @@ package proyecto_estructuradatos;
 
 import javax.swing.JOptionPane;
 
-
+//Todos los subcatalogos son colas
 public class Funcion_Subcatalogos {
     
     private NodoDeportista inicioDeportista;
@@ -601,6 +601,22 @@ public class Funcion_Subcatalogos {
             JOptionPane.showMessageDialog(null, "Ninguna rutina registrada nada que inactivar");
         }
     }
+    
+    public Rutina devolver(int a){
+        Rutina r;
+        NodoRutina aux = inicioRutinas;
+
+        while (aux != null) {
+            if (a == aux.getElemento().getIdRutina()) {
+                r = aux.getElemento();
+                return r;
+            }
+            
+            aux= aux.getSiguiente();
+        }
+        return null;
+    }
+    
 }
 
     
