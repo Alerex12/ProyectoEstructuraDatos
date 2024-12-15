@@ -8,6 +8,8 @@ public class Facturacion {
     private Date hora;//averiguar si se puede usar LocalTime 
     private String descripRutina;//aqui se guarda la descripcion de la rutina
     private String nombreCliente;
+    private Estado Est;
+
 
     public Facturacion() {
         this.pago = 0;
@@ -15,6 +17,15 @@ public class Facturacion {
         this.hora = null;
         this.descripRutina = null;
         this.nombreCliente = null;
+        this.Est= null;//podria ir en activo pero idk
+    }
+
+    public Estado getEst() {
+        return Est;
+    }
+
+    public void setEst(Estado Est) {
+        this.Est = Est;
     }
 
     public double getPago() {
