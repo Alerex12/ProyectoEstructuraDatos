@@ -26,6 +26,16 @@ public class Funcion_Subcatalogos {
         this.inicioRutinas = null;
         this.finRutinas = null;
     }
+
+    public NodoPadresDeFamilia getInicioPadres() {
+        return inicioPadres;
+    }
+
+    public NodoRutina getInicioRutinas() {
+        return inicioRutinas;
+    }
+    
+    
    
     public boolean esVaciaDepor(){
          if(inicioDeportista==null){

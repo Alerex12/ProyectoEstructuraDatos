@@ -1,23 +1,24 @@
 
 package proyecto_estructuradatos;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class Facturacion {
     private double pago;
-    private Date fecha;//averiguar si se puede usar LocalTime depende si el profe deja o no usarla
-    private Date hora;//averiguar si se puede usar LocalTime 
+    private LocalDate fecha;
+    private LocalTime hora;//averiguar si se puede usar LocalTime 
     private String descripRutina;//aqui se guarda la descripcion de la rutina
     private String nombreCliente;
     private Estado Est;
 
 
     public Facturacion() {
-        this.pago = 0;
+        this.pago = 0.00;
         this.fecha = null;
         this.hora = null;
-        this.descripRutina = null;
-        this.nombreCliente = null;
-        this.Est= null;//podria ir en activo pero idk
+        this.descripRutina ="";
+        this.nombreCliente ="";
+        this.Est= Estado.ACTIVO;//podria ir en activo pero idk
     }
 
     public Estado getEst() {
@@ -36,19 +37,19 @@ public class Facturacion {
         this.pago = pago;
     }
 
-    public Date getFecha() {
+    public LocalDate getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
 
-    public Date getHora() {
+    public LocalTime getHora() {
         return hora;
     }
 
-    public void setHora(Date hora) {
+    public void setHora(LocalTime hora) {
         this.hora = hora;
     }
 

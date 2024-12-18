@@ -9,7 +9,7 @@ public class Menu {
     private ColaUsuarios usuario = new ColaUsuarios();
     private Funcion_Subcatalogos f= new Funcion_Subcatalogos();
     private Funcion_Facturacion a= new Funcion_Facturacion();
-
+    
     public void mostrarMenu() {
         opt = Byte.parseByte(
                 JOptionPane.showInputDialog("--------BIENVENIDO AL MENU DEL GIMNASIO INFANTIL ESTRELLITAS--------\n" +
@@ -19,7 +19,8 @@ public class Menu {
                         + "3-Catalogos padres de familia\n"
                         + "4-Catalogos deporte\n"
                         + "5-Catalogo de rutinas\n"
-                        + "6-Salir del sistema"));
+                        + "6-Catalogo de facturacion\n"
+                        + "7-Salir del sistema"));
         switch (opt) {
             case 1:
                 do {
@@ -182,6 +183,36 @@ public class Menu {
                 mostrarMenu();
                 break;
             case 6:
+                
+                do {
+                    opt2 = Integer.parseInt(JOptionPane.showInputDialog("¿Que accion desea realizar con los usuarios?\n"
+                            + "1-Agregar un factura\n"
+                            + "2-Anular factura\n"
+                            + "3-Mostrar todas las facturas\n"
+                            + "4-Salir del catalogo de facturacion\n"));
+                    switch (opt2) {
+                        case 1:
+                            a.agregarFactura(f.getInicioRutinas(), f.getInicioPadres());
+                            break;
+                        case 2:
+                            a.Anular();
+                            break;
+                        case 3:
+                            a.mostrarFacturaOpcion();
+                            break;
+                        case 4:
+                            JOptionPane.showMessageDialog(null, "Saliendo del catalogo de facturacion");
+                            break;
+                        default:
+                            JOptionPane.showMessageDialog(null, "Opcion invalida");
+                            break;
+
+                    }
+                } while (opt2 != 4);
+                
+                mostrarMenu();
+                break;
+            case 7:
                 JOptionPane.showMessageDialog(null, "Saliendo del sistema...");
                 System.exit(0);
                 break;
